@@ -76,7 +76,7 @@ jiter==0.17.0
 jiwer==4.0.0
 joblib==1.6.0
 kiwisolver==1.5.1
-librt==0.15.0
+librt==0.16.0
 lupa==2.8
 Mako==1.4.1
 MarkupSafe==3.0.3
