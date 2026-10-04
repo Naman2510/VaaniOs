@@ -57,13 +57,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -c constraints.txt -e ".[eval,voice-local]"
       - name: Cache the recogniser's weights
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/huggingface
           key: whisper-${{ hashFiles('backend/eval/configs/stt.toml') }}
       # For the voice loop below: the VAD's weights, pinned and checksummed, and the local voice.
       - name: Cache the VAD's weights
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: backend/models
           key: models-${{ hashFiles('backend/scripts/fetch_models.sh') }}
