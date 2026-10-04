@@ -37,7 +37,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -c constraints.txt -e ".[dev,rag,eval]"
       - name: Cache model weights
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: backend/models
           key: models-${{ hashFiles('backend/scripts/fetch_models.sh') }}
@@ -101,7 +101,7 @@ jobs:
           pip install -c constraints.txt -e ".[dev,rag,eval]"
 
       - name: Cache model weights
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: backend/models
           key: models-${{ hashFiles('backend/scripts/fetch_models.sh') }}
