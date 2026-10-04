@@ -135,7 +135,7 @@ jobs:
           python scripts/bench_voice_loop.py --json voice-loop.json | tee -a t2-report.txt
       - name: Keep the report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: t2-report
           path: |
