@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "### Skipped: no ANTHROPIC_API_KEY secret" >> "$GITHUB_STEP_SUMMARY"
           echo "Nothing was checked against the live API." >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: env.ANTHROPIC_API_KEY != ''
       - uses: actions/setup-python@v5
         if: env.ANTHROPIC_API_KEY != ''
