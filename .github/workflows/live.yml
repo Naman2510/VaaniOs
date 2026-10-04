@@ -24,7 +24,7 @@ jobs:
           echo "Nothing was checked against the live API." >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/checkout@v4
         if: env.ANTHROPIC_API_KEY != ''
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         if: env.ANTHROPIC_API_KEY != ''
         with:
           python-version: "3.11"
