@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # Multi-stage: the runtime image carries no build toolchain and no dev/eval dependencies.
 
-FROM python:3.11-slim-bookworm AS builder
+FROM python:3.15-slim-bookworm AS builder
 WORKDIR /build
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 PIP_NO_CACHE_DIR=1
 RUN apt-get update \
@@ -25,7 +25,7 @@ digest = hashlib.sha256(data).hexdigest(); \
 sys.exit(f'silero_vad.onnx checksum mismatch: {digest}') if digest != os.environ['SILERO_SHA256'] \
 else open('/build/models/silero_vad.onnx', 'wb').write(data)"
 
-FROM python:3.11-slim-bookworm AS runtime
+FROM python:3.15-slim-bookworm AS runtime
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PATH="/opt/venv/bin:$PATH"
